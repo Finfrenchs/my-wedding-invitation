@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Kirim Undangan via WhatsApp</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        max-width: 600px;
+        margin: 50px auto;
+        padding: 20px;
+        background: #f9f9f9;
+        border-radius: 12px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        text-align: center;
+      }
+      input {
+        width: 80%;
+        padding: 12px;
+        margin-bottom: 20px;
+        font-size: 16px;
+        border-radius: 6px;
+        border: 1px solid #ccc;
+      }
+      button {
+        padding: 12px 24px;
+        background-color: #25d366;
+        color: white;
+        font-size: 16px;
+        border: none;
+        border-radius: 6px;
+        cursor: pointer;
+      }
+      button:hover {
+        background-color: #1da851;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Kirim Undangan via WhatsApp</h1>
+    <input type="text" id="nama" placeholder="Masukkan nama tamu..." />
+    <br />
+    <button onclick="kirimUndangan()">Kirim WhatsApp</button>
+
+    <script>
+      function kirimUndangan() {
+        const nama = document.getElementById("nama").value.trim();
+        if (!nama) {
+          alert("Masukkan nama terlebih dahulu!");
+          return;
+        }
+
+        const encodedNama = encodeURIComponent(nama);
+        const linkUndangan = `https://my-wedding-invitation-chi.vercel.app/?nama=${encodedNama}`;
+        const pesan = `Halo ${nama}, saya mengundang Anda ke acara pernikahan kami. Berikut adalah undangan digitalnya:\n\n${linkUndangan}`;
+        const waLink = `https://wa.me/?text=${encodeURIComponent(pesan)}`;
+
+        window.open(waLink, "_blank");
+      }
+    </script>
+  </body>
+</html>

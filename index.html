@@ -98,6 +98,16 @@
         --wp--preset--font-size--x-large: 42px;
       }
       /* hero modal */
+      .kotak-nama-undangan {
+        max-width: 250px;
+        max-height: 200px;
+        background-color: white;
+        border-radius: 10px;
+        padding: 12px 20px;
+        display: inline-block;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        margin-top: 10px;
+      }
 
       .circle-photo {
         max-width: 200px;
@@ -9122,6 +9132,7 @@
     <!-- End Google Tag Manager -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
   </head>
+
   <body
     data-rsssl="1"
     class="post-template post-template-elementor_canvas single single-post postid-9575 single-format-standard page-sidebar-inactive header-active header-menu-active header-menu-sticky header-menu-after footer-active elementor-default elementor-template-canvas elementor-kit-4531 elementor-page elementor-page-9575"
@@ -10869,7 +10880,15 @@
                                   <div class="wdp-mempelai">Reza &amp; Kelvin</div>
 
                                   <div class="wdp-dear">Tanpa mengurangi rasa hormat, kami mengundang Bapak/Ibu dan Saudara/i menghadiri acara Pernikahan kami:</div>
-                                  <div class="wdp-name"></div>
+                                  <div class="wdp-name">
+                                    <h2 class="wdp-dear">Kepada Yth:</h2>
+
+                                    <!-- Tambahan kotak putih -->
+                                    <div class="kotak-nama-undangan">
+                                      <h2><span id="nama-undangan"></span></h2>
+                                    </div>
+                                  </div>
+
                                   <div class="wdp-button-wrapper" id="wdp-button-wrapper">
                                     <button class="elementor-button">Buka Undangan</button>
                                   </div>
@@ -13810,6 +13829,15 @@
           alert(`Nomor ${text} berhasil disalin!`);
         });
       }
+    </script>
+    <script>
+      window.addEventListener("DOMContentLoaded", function () {
+        const params = new URLSearchParams(window.location.search);
+        const nama = params.get("nama");
+        if (nama) {
+          document.getElementById("nama-undangan").textContent = decodeURIComponent(nama);
+        }
+      });
     </script>
   </body>
 </html>
