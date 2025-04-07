@@ -13,6 +13,10 @@
     <link rel="stylesheet" href="node_modules/simplycountdown.js/dist/themes/default.css" />
     <script src="node_modules/simplycountdown.js/dist/simplyCountdown.umd.js"></script>
 
+    <!-- Tambahkan di head atau sebelum script countdown -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/simplycountdown.js/dist/simplyCountdown.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/simplycountdown.js/dist/simplyCountdown.min.js"></script>
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
 
     <meta name="robots" content="noindex, nofollow" />
@@ -13809,7 +13813,7 @@
     <div data-pafe-form-builder-tinymce-upload="https://berjodoh.id/wp-content/plugins/piotnet-addons-for-elementor-pro/inc/tinymce/tinymce-upload.php"></div>
     <div data-pafe-ajax-url="https://berjodoh.id/wp-admin/admin-ajax.php"></div>
 
-    <script>
+    <!-- <script>
       // This will init all countdowns with the same options, but different themes
       simplyCountdown(".my-countdown", {
         year: 2025, // Target year (required)
@@ -13827,6 +13831,26 @@
         sectionClass: "simply-section", // CSS class for each countdown section
         amountClass: "simply-amount", // CSS class for numeric values
         wordClass: "simply-word", // CSS class for unit labels
+      });
+    </script> -->
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        simplyCountdown(".my-countdown", {
+          year: 2025,
+          month: 4,
+          day: 27,
+          hours: 8,
+          words: {
+            days: { root: "hari", lambda: (root, n) => root },
+            hours: { root: "jam", lambda: (root, n) => root },
+            minutes: { root: "menit", lambda: (root, n) => root },
+            seconds: { root: "detik", lambda: (root, n) => root },
+          },
+          refresh: 1000,
+          sectionClass: "simply-section",
+          amountClass: "simply-amount",
+          wordClass: "simply-word",
+        });
       });
     </script>
     <script>
