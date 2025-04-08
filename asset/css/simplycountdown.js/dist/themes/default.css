@@ -54,17 +54,17 @@
 
 @media (min-width: 640px) {
   .simply-countdown > .simply-section {
-    width: 50px;
-    height: 50px;
-    padding: 1.5rem;
+    width: 75px;
+    height: 75px;
+    padding: 1.75rem;
   }
 
   .simply-countdown > .simply-section .simply-amount {
-    font-size: 1.5rem;
+    font-size: 1.75rem;
   }
 
   .simply-countdown > .simply-section .simply-word {
-    font-size: 0.5rem;
+    font-size: 0.75rem;
   }
 }
 
